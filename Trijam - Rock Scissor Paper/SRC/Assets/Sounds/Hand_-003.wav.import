@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Hand_-003.wav-006ddc4636b304885eb9d6c12544e11f.sample"
+
+[deps]
+
+source_file="res://SRC/Assets/Sounds/Hand_-003.wav"
+dest_files=[ "res://.import/Hand_-003.wav-006ddc4636b304885eb9d6c12544e11f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

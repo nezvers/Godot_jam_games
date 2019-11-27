@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Retro Cinematic Wind 02.wav-72128cd0cfe4d152978c735b6fa81764.sample"
+
+[deps]
+
+source_file="res://SRC/Assets/Sounds/Retro Cinematic Wind 02.wav"
+dest_files=[ "res://.import/Retro Cinematic Wind 02.wav-72128cd0cfe4d152978c735b6fa81764.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

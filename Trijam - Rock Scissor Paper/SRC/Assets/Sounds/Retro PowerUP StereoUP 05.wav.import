@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Retro PowerUP StereoUP 05.wav-3cc849bdc7d8e8feaf0483d67054f9bd.sample"
+
+[deps]
+
+source_file="res://SRC/Assets/Sounds/Retro PowerUP StereoUP 05.wav"
+dest_files=[ "res://.import/Retro PowerUP StereoUP 05.wav-3cc849bdc7d8e8feaf0483d67054f9bd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

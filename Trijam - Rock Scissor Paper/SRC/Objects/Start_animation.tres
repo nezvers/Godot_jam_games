@@ -1,0 +1,67 @@
+[gd_resource type="Animation" load_steps=2 format=2]
+
+[ext_resource path="res://SRC/Assets/Images/Hands_frame1.png" type="Texture" id=1]
+
+[resource]
+resource_name = "Start"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Hands:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Hands:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.30223, -4.82253, -62.19, -0.107958, 11.5534, 0.194271, 3.35512, 0, -0.0700641, -2.31481, 0.282334, -11.5741, -62.19, -0.127854, 11.5534, 0.220025, 3.35512, 0, -0.0647365, -0.578704, 0.298643, -12.0563, -62.19, -0.117842, 11.0712, 0.21587, 13.0002, 0, -0.0553339, -2.89352, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.5, 0.8, 1, 1.3, 1.5 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Hands/Player:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5, 1, 1.3, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_hit_sound"
+}, {
+"args": [  ],
+"method": "play_hit_sound"
+}, {
+"args": [  ],
+"method": "reveal_time"
+}, {
+"args": [  ],
+"method": "score"
+}, {
+"args": [  ],
+"method": "animation_end"
+} ]
+}

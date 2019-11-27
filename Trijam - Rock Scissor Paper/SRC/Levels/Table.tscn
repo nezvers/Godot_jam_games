@@ -1,0 +1,142 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://SRC/Levels/Table.gd" type="Script" id=1]
+[ext_resource path="res://SRC/Objects/Leg.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SRC/GUI/HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SRC/Assets/Images/Hands_frame1.png" type="Texture" id=4]
+[ext_resource path="res://SRC/Objects/Default_animation.tres" type="Animation" id=5]
+[ext_resource path="res://SRC/Objects/Start_animation.tres" type="Animation" id=6]
+
+[node name="Table" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="PlayerLegs" type="Node2D" parent="."]
+editor/display_folded = true
+modulate = Color( 0.858824, 0.831373, 1, 1 )
+
+[node name="Position2D" type="Position2D" parent="PlayerLegs"]
+position = Vector2( 39.5016, 113.628 )
+
+[node name="Leg" parent="PlayerLegs" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( -79.491, 92.1706 )
+
+[node name="Leg2" parent="PlayerLegs" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( -84.8554, 135.086 )
+
+[node name="Leg3" parent="PlayerLegs" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( -105.338, 46.8168 )
+
+[node name="Leg4" parent="PlayerLegs" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( -43.8907, 60.4717 )
+
+[node name="Leg5" parent="PlayerLegs" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( -52.6689, 124.845 )
+
+[node name="Leg6" parent="PlayerLegs" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( -128.259, 85.3431 )
+
+[node name="Leg7" parent="PlayerLegs" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( -41.94, 95.0966 )
+
+[node name="Leg8" parent="PlayerLegs" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( -79.9787, 37.551 )
+
+[node name="Leg9" parent="PlayerLegs" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( -48.2798, 144.352 )
+
+[node name="Leg10" parent="PlayerLegs" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( -116.067, 130.697 )
+
+[node name="Leg11" parent="PlayerLegs" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( -96.5597, 93.6336 )
+
+[node name="Leg12" parent="PlayerLegs" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( -129.722, 40.4771 )
+
+[node name="Leg13" parent="PlayerLegs" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( -103.881, -54.0603 )
+
+[node name="EnemyLegs" type="Node2D" parent="."]
+editor/display_folded = true
+modulate = Color( 1, 0.568627, 0.568627, 1 )
+
+[node name="Position2D" type="Position2D" parent="EnemyLegs"]
+position = Vector2( 273.212, 107.684 )
+
+[node name="Leg" parent="EnemyLegs" instance=ExtResource( 2 )]
+position = Vector2( 427.939, 58.6132 )
+
+[node name="Leg2" parent="EnemyLegs" instance=ExtResource( 2 )]
+position = Vector2( 354.2, 24.5797 )
+
+[node name="Leg3" parent="EnemyLegs" instance=ExtResource( 2 )]
+position = Vector2( 349.158, 60.5039 )
+
+[node name="Leg4" parent="EnemyLegs" instance=ExtResource( 2 )]
+position = Vector2( 390.124, 131.092 )
+
+[node name="Leg5" parent="EnemyLegs" instance=ExtResource( 2 )]
+position = Vector2( 346.007, 144.957 )
+
+[node name="Leg6" parent="EnemyLegs" instance=ExtResource( 2 )]
+position = Vector2( 354.2, 99.5794 )
+
+[node name="Leg7" parent="EnemyLegs" instance=ExtResource( 2 )]
+position = Vector2( 396.427, 85.7139 )
+
+[node name="Leg8" parent="EnemyLegs" instance=ExtResource( 2 )]
+position = Vector2( 392.645, 27.1007 )
+
+[node name="Leg9" parent="EnemyLegs" instance=ExtResource( 2 )]
+position = Vector2( 439.284, 115.966 )
+
+[node name="Leg10" parent="EnemyLegs" instance=ExtResource( 2 )]
+position = Vector2( 432.981, 178.991 )
+
+[node name="Leg11" parent="EnemyLegs" instance=ExtResource( 2 )]
+position = Vector2( 449.368, 24.5797 )
+
+[node name="Leg12" parent="EnemyLegs" instance=ExtResource( 2 )]
+position = Vector2( 467.645, 90.7559 )
+
+[node name="Leg13" parent="EnemyLegs" instance=ExtResource( 2 )]
+position = Vector2( 470.796, 135.504 )
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+
+[node name="Hands" type="Node2D" parent="."]
+visible = false
+
+[node name="Player" type="Sprite" parent="Hands"]
+position = Vector2( 140.737, 98.3544 )
+texture = ExtResource( 4 )
+
+[node name="Enemy" type="Sprite" parent="Hands"]
+position = Vector2( 169.855, 98.3544 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Default"
+playback_speed = 0.5
+anims/Default = ExtResource( 5 )
+anims/Start = ExtResource( 6 )
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+
+[editable path="PlayerLegs/Leg"]
