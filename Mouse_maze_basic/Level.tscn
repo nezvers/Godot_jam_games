@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Level.gd" type="Script" id=1]
+[ext_resource path="res://Grounds.gd" type="Script" id=2]
+[ext_resource path="res://Ground.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Finish.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Start.tscn" type="PackedScene" id=5]
+
+[node name="Level" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+Next_Level = "res://Level1.tscn"
+
+[node name="Grounds" type="Control" parent="."]
+editor/display_folded = true
+margin_right = 1025.06
+margin_bottom = 600.0
+script = ExtResource( 2 )
+
+[node name="Ground" parent="Grounds" instance=ExtResource( 3 )]
+margin_left = 400.0
+margin_top = 280.0
+margin_right = 600.0
+margin_bottom = 320.0
+
+[node name="Ground2" parent="Grounds" instance=ExtResource( 3 )]
+margin_left = 560.0
+margin_top = 320.0
+margin_right = 600.0
+margin_bottom = 440.0
+
+[node name="Ground3" parent="Grounds" instance=ExtResource( 3 )]
+margin_left = 240.0
+margin_top = 400.0
+margin_right = 560.0
+margin_bottom = 440.0
+
+[node name="Ground4" parent="Grounds" instance=ExtResource( 3 )]
+margin_left = 240.0
+margin_top = 120.0
+margin_right = 280.0
+margin_bottom = 400.0
+
+[node name="Ground5" parent="Grounds" instance=ExtResource( 3 )]
+margin_left = 280.0
+margin_top = 120.0
+margin_right = 840.0
+margin_bottom = 160.0
+
+[node name="Finish" parent="." instance=ExtResource( 4 )]
+margin_left = 800.0
+margin_top = 120.0
+margin_right = 840.0
+margin_bottom = 160.0
+
+[node name="Start" parent="." instance=ExtResource( 5 )]
+margin_left = 400.0
+margin_top = 280.0
+margin_right = 420.0
+margin_bottom = 300.0
+[connection signal="mouse_entered" from="Grounds" to="Grounds" method="_on_Grounds_mouse_entered"]
