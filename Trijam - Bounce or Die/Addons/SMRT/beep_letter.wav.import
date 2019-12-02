@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/beep_letter.wav-cdd19d3a6ef1a845140ebca5bdf053ca.sample"
+
+[deps]
+
+source_file="res://Addons/SMRT/beep_letter.wav"
+dest_files=[ "res://.import/beep_letter.wav-cdd19d3a6ef1a845140ebca5bdf053ca.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
