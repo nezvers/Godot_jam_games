@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Levels/Level.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Block.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GUI/HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Start.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Finish.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player/Ball.tscn" type="PackedScene" id=6]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+Next_scene = "res://Levels/Level6.tscn"
+
+[node name="Solids" type="Node2D" parent="."]
+
+[node name="Block" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 40, 80 )
+scale = Vector2( 20, 1 )
+
+[node name="Block2" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 40, 161 )
+scale = Vector2( 18, 1 )
+
+[node name="Block3" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 40, 240 )
+scale = Vector2( 20, 1 )
+
+[node name="Block4" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 440, 80 )
+scale = Vector2( 1, 9 )
+
+[node name="Block5" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 20, 80 )
+scale = Vector2( 1, 9 )
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+Time = 4.0
+
+[node name="Start" parent="." instance=ExtResource( 4 )]
+position = Vector2( 40, 121 )
+
+[node name="Finish" parent="." instance=ExtResource( 5 )]
+position = Vector2( 280, 200 )
+
+[node name="Ball" parent="." instance=ExtResource( 6 )]
+position = Vector2( 60, 141 )

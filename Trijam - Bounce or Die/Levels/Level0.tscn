@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Levels/Level.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Start.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Finish.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GUI/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Ball.tscn" type="PackedScene" id=5]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+Next_scene = "res://Levels/Level1.tscn"
+
+[node name="Solids" type="Node2D" parent="."]
+
+[node name="Start" parent="." instance=ExtResource( 2 )]
+position = Vector2( 20, 100.789 )
+
+[node name="Finish" parent="." instance=ExtResource( 3 )]
+position = Vector2( 320, 100.789 )
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+layer = 10
+Time = 1.0
+
+[node name="Ball" parent="." instance=ExtResource( 5 )]
+position = Vector2( 40, 120.789 )

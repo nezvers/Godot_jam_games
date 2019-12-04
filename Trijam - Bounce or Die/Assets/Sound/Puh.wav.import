@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Puh.wav-6110faec650299a5a5bcbca3f95d0cb3.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Puh.wav"
+dest_files=[ "res://.import/Puh.wav-6110faec650299a5a5bcbca3f95d0cb3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

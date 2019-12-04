@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Levels/Level.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Block.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/BlackHole.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GUI/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Start.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Finish.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Player/Ball.tscn" type="PackedScene" id=7]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+Next_scene = "res://Levels/Level7.tscn"
+
+[node name="Solids" type="Node2D" parent="."]
+
+[node name="Block" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 40, 40 )
+scale = Vector2( 20, 1 )
+
+[node name="Block3" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 40, 200 )
+scale = Vector2( 20, 1 )
+
+[node name="Block4" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 440, 40 )
+scale = Vector2( 1, 9 )
+
+[node name="Block5" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 20, 40 )
+scale = Vector2( 1, 9 )
+
+[node name="BlackHole" parent="Solids" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 30, 120 )
+
+[node name="BlackHole3" parent="Solids" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 70, 120 )
+
+[node name="BlackHole6" parent="Solids" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 110, 120 )
+
+[node name="BlackHole7" parent="Solids" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 150, 120 )
+
+[node name="BlackHole9" parent="Solids" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 190, 120 )
+
+[node name="BlackHole11" parent="Solids" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 230, 120 )
+
+[node name="BlackHole13" parent="Solids" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 270, 120 )
+
+[node name="BlackHole15" parent="Solids" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 310, 120 )
+
+[node name="BlackHole18" parent="Solids" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 350, 120 )
+
+[node name="BlackHole2" parent="Solids" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 50, 120 )
+
+[node name="BlackHole4" parent="Solids" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 90, 120 )
+
+[node name="BlackHole5" parent="Solids" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 130, 120 )
+
+[node name="BlackHole8" parent="Solids" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 170, 120 )
+
+[node name="BlackHole10" parent="Solids" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 210, 120 )
+
+[node name="BlackHole12" parent="Solids" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 250, 120 )
+
+[node name="BlackHole14" parent="Solids" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 290, 120 )
+
+[node name="BlackHole16" parent="Solids" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 330, 120 )
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+Time = 5.0
+
+[node name="Start" parent="." instance=ExtResource( 5 )]
+position = Vector2( 40, 80 )
+
+[node name="Finish" parent="." instance=ExtResource( 6 )]
+position = Vector2( 40, 160 )
+
+[node name="Ball" parent="." instance=ExtResource( 7 )]
+position = Vector2( 60, 100 )
