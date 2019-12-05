@@ -3,8 +3,10 @@ extends Node
 signal Text
 signal Typing
 signal Score
+signal Fuel
 
 var points: int = 0 setget set_points
+var fuel: float = 100 setget set_fuel
 var difficulity = floor(points/10)
 var text: String = ""
 var inputstr: String = "" setget set_inputstr
@@ -34,3 +36,19 @@ func set_points(value:int)->void:
 	points = value
 	difficulity = floor(points/10)
 	emit_signal("Score")
+
+func set_fuel(value:float):
+	emit_signal("Fuel", fuel, value)
+	fuel = value
+
+
+
+
+
+
+
+
+
+
+
+

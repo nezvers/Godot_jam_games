@@ -7,6 +7,7 @@ onready var start_position: float = global_position.x
 onready var shape = $Area2D/CollisionShape2D
 
 func _ready():
+	randomize()
 	new_name()
 	Event.connect("Text", self, "on_Text")
 
@@ -14,7 +15,7 @@ func new_position():
 	beam_me = false
 	rotation_degrees = 0
 	global_position.y = randf() * 160 + 840
-	global_position.x = start_position + 1920
+	global_position.x = start_position + (1920 * 2)
 	start_position = global_position.x
 	$AudioStreamPlayer.play()
 	new_name()
