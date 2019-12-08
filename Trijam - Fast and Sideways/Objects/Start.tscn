@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Objects/Start.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sounds/Start.wav" type="AudioStream" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 48.1528 )
+
+[node name="Start" type="Area2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="blink" type="ColorRect" parent="."]
+margin_left = -10.0
+margin_top = -48.0
+margin_right = 10.0
+margin_bottom = 48.0
+mouse_filter = 2
+color = Color( 1, 1, 1, 0 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -10.0
+margin_top = 38.0
+margin_right = 10.0
+margin_bottom = 44.0
+mouse_filter = 2
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = -10.0
+margin_top = 23.0
+margin_right = 10.0
+margin_bottom = 29.0
+mouse_filter = 2
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_left = -10.0
+margin_top = 7.0
+margin_right = 10.0
+margin_bottom = 13.0
+mouse_filter = 2
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+margin_left = -10.0
+margin_top = -9.0
+margin_right = 10.0
+margin_bottom = -3.0
+mouse_filter = 2
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+margin_left = -10.0
+margin_top = -24.0
+margin_right = 10.0
+margin_bottom = -18.0
+mouse_filter = 2
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+margin_left = -10.0
+margin_top = -39.0
+margin_right = 10.0
+margin_bottom = -33.0
+mouse_filter = 2
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "SFX"
+[connection signal="body_entered" from="." to="." method="_on_Start_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Start_body_exited"]

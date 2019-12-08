@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ZeldaLevelUp.wav-8c157b00e3bc7c435f2a375bfbb14a7f.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/ZeldaLevelUp.wav"
+dest_files=[ "res://.import/ZeldaLevelUp.wav-8c157b00e3bc7c435f2a375bfbb14a7f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
