@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/Game/Ball.png" type="Texture" id=2]
+
+[sub_resource type="PhysicsMaterial" id=1]
+bounce = 0.6
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 4.0
+
+[node name="Player" type="RigidBody2D"]
+collision_layer = 2
+physics_material_override = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Indicator" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Indicator" type="ColorRect" parent="Indicator"]
+margin_right = 5.0
+margin_bottom = 1.0
+mouse_filter = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

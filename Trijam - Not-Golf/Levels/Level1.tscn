@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Levels/LevelStages.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Solid.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Goal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+Next_Scene = "res://Levels/Level2.tscn"
+
+[node name="Solids" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Solid" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 16, 88 )
+scale = Vector2( 5, 1 )
+
+[node name="Solid10" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 13, 25 )
+scale = Vector2( 1, 9 )
+
+[node name="Solid11" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 243, 29 )
+scale = Vector2( 1, 9 )
+
+[node name="Solid3" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 88, 128 )
+scale = Vector2( 10, 1 )
+
+[node name="Solid7" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 13, 25 )
+scale = Vector2( 10, 1 )
+
+[node name="Solid8" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 168, 33 )
+scale = Vector2( 10, 1 )
+
+[node name="Solid9" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 168, 92 )
+scale = Vector2( 10, 1 )
+
+[node name="Solid2" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 50, 96 )
+rotation = -0.760963
+scale = Vector2( 1, 7 )
+
+[node name="Solid5" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 88, 30 )
+rotation = -0.760963
+scale = Vector2( 1, 7 )
+
+[node name="Solid4" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 168, 136 )
+rotation = -2.28464
+scale = Vector2( 1, 7 )
+
+[node name="Solid6" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 131, 76 )
+rotation = -2.28464
+scale = Vector2( 1, 7 )
+
+[node name="Goal" parent="." instance=ExtResource( 3 )]
+position = Vector2( 232, 84 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 30, 84 )

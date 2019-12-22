@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Objects/Spike.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4, 4 )
+
+[node name="Spike" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 0.785398
+shape = SubResource( 1 )
+
+[node name="Node2D" type="Node2D" parent="."]
+rotation = 0.785398
+
+[node name="ColorRect" type="ColorRect" parent="Node2D"]
+margin_left = -4.0
+margin_top = -4.0
+margin_right = 4.0
+margin_bottom = 4.0
+mouse_filter = 2
+[connection signal="body_entered" from="." to="." method="_on_Spike_body_entered"]

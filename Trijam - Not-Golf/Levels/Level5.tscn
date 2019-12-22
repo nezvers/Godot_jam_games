@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Levels/LevelStages.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Solid.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Spike.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Goal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+Next_Scene = "res://GUI/Main_Menu.tscn"
+
+[node name="Solids" type="Node2D" parent="."]
+
+[node name="Solid" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 16, 88 )
+scale = Vector2( 10, 1 )
+
+[node name="Solid4" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 7, -5 )
+scale = Vector2( 4, 1 )
+
+[node name="Solid8" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 39, -67 )
+scale = Vector2( 4, 1 )
+
+[node name="Solid9" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 7, -93 )
+scale = Vector2( 12.2, 1 )
+
+[node name="Solid6" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 7, -5 )
+rotation = -1.5708
+scale = Vector2( 10, 1 )
+
+[node name="Solid5" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 73, -5 )
+scale = Vector2( 4, 1 )
+
+[node name="Solid7" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 105, -5 )
+rotation = 1.5708
+scale = Vector2( -10, 1 )
+
+[node name="Solid2" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 16, 88 )
+rotation = -1.39626
+scale = Vector2( 11, 1 )
+
+[node name="Solid3" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 96, 88 )
+rotation = -1.74533
+scale = Vector2( 11, -1 )
+
+[node name="Spike" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 55, -61 )
+
+[node name="Spike4" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 44, -61 )
+
+[node name="Spike5" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 66, -61 )
+
+[node name="Goal" parent="." instance=ExtResource( 4 )]
+position = Vector2( 52, -75 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 30, 84 )

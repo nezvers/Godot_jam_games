@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/FM_3_FX.wav-f8b9578588a188ddc2096819787a1d66.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/FM_3_FX.wav"
+dest_files=[ "res://.import/FM_3_FX.wav-f8b9578588a188ddc2096819787a1d66.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

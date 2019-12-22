@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Levels/LevelStages.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Solid.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Spike.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Goal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+Next_Scene = "res://Levels/Level5.tscn"
+
+[node name="Solids" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Solid" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 16, 88 )
+scale = Vector2( 10, 1 )
+
+[node name="Solid2" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 96, 96 )
+scale = Vector2( 10, 1 )
+
+[node name="Solid3" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 176, 88 )
+scale = Vector2( 10, 1 )
+
+[node name="Solid4" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 256, 96 )
+scale = Vector2( 10, 1 )
+
+[node name="Solid5" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 336, 88 )
+scale = Vector2( 10, 1 )
+
+[node name="Solid6" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 416, 32 )
+scale = Vector2( 10, 1 )
+
+[node name="Solid10" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 16, -8 )
+scale = Vector2( 1, 12 )
+
+[node name="Solid7" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 416, 32 )
+scale = Vector2( 1, 8 )
+
+[node name="Solid8" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 488, 0 )
+scale = Vector2( 1, 4 )
+
+[node name="Solid9" parent="Solids" instance=ExtResource( 2 )]
+position = Vector2( 16, -8 )
+scale = Vector2( 60, 1 )
+
+[node name="Spike" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 102, 96 )
+
+[node name="Spike10" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 263, 96 )
+
+[node name="Spike2" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 117, 96 )
+
+[node name="Spike6" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 278, 96 )
+
+[node name="Spike3" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 134, 96 )
+
+[node name="Spike9" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 295, 96 )
+
+[node name="Spike4" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 150, 96 )
+
+[node name="Spike7" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 311, 96 )
+
+[node name="Spike5" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 166, 96 )
+
+[node name="Spike8" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 327, 96 )
+
+[node name="Spike11" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 406, 88 )
+
+[node name="Goal" parent="." instance=ExtResource( 4 )]
+position = Vector2( 468, 24 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 30, 84 )

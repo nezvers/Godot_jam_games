@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Unexpected.ogg-566cd6bab630b7039870cc2caf8db687.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/Unexpected.ogg"
+dest_files=[ "res://.import/Unexpected.ogg-566cd6bab630b7039870cc2caf8db687.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

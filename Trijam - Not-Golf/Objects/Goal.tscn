@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3, 4 )
+
+[node name="Goal" type="Area2D"]
+gravity = 0.0
+collision_layer = 0
+collision_mask = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 6.0
+margin_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_right = 1.0
+margin_bottom = 8.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 3, 4 )
+shape = SubResource( 1 )
