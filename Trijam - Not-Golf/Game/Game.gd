@@ -23,7 +23,8 @@ func on_ChangeScene(scene):
 	if FadeState != IDLE:
 		return
 	#print("on_ChangeScene: ", scene)
-	SceneLoader.load_scene(scene, {scene="Level"})
+	#SceneLoader.load_scene(scene, {scene="Level"}) #Doesn't work on HTML5
+	NextScene = load(scene)
 	FadeState = FADEOUT
 	$FadeTween.interpolate_property($FadeLayer, "percent", 0.0, 1.0, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN, 0.0)
 	$FadeTween.start()
