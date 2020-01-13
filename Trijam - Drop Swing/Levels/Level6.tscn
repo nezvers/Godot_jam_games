@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Levels/Level.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Death.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Floor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Star.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=5]
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+Next_Scene = "res://Levels/Level1.tscn"
+
+[node name="Death" parent="." instance=ExtResource( 2 )]
+position = Vector2( -192, 432 )
+scale = Vector2( 24, 1 )
+
+[node name="Solids" type="Node2D" parent="."]
+
+[node name="Floor3" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 0.0775099, 160 )
+
+[node name="Floor4" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 0.0775099, -32 )
+
+[node name="Floor5" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 0.0775099, -240 )
+
+[node name="Floor6" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 224, -240 )
+
+[node name="Floor7" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 432, -232 )
+
+[node name="Floor8" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 232, 156.01 )
+
+[node name="Floor9" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 440, 160 )
+
+[node name="Floor10" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 440, -40 )
+
+[node name="Stars" type="Node2D" parent="."]
+
+[node name="Star2" parent="Stars" instance=ExtResource( 4 )]
+position = Vector2( 8.07751, 48 )
+
+[node name="Star3" parent="Stars" instance=ExtResource( 4 )]
+position = Vector2( 8.07751, -128 )
+
+[node name="Star4" parent="Stars" instance=ExtResource( 4 )]
+position = Vector2( 112, -232 )
+
+[node name="Star5" parent="Stars" instance=ExtResource( 4 )]
+position = Vector2( 336, -232 )
+
+[node name="Star6" parent="Stars" instance=ExtResource( 4 )]
+position = Vector2( 440, -144 )
+
+[node name="Star7" parent="Stars" instance=ExtResource( 4 )]
+position = Vector2( 448, 64 )
+
+[node name="Star8" parent="Stars" instance=ExtResource( 4 )]
+position = Vector2( 352, 164.01 )
+
+[node name="Star9" parent="Stars" instance=ExtResource( 4 )]
+position = Vector2( 120, 160 )
+
+[node name="Star10" parent="Stars" instance=ExtResource( 4 )]
+position = Vector2( 232, -32 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 8.07748, 148.01 )
+physics_material_override = SubResource( 1 )
+DeathNode = NodePath("../Death")

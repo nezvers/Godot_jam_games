@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Levels/Level.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Death.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Floor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Star.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=5]
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+Next_Scene = "res://Levels/Level2.tscn"
+
+[node name="Death" parent="." instance=ExtResource( 2 )]
+position = Vector2( -192, 432 )
+scale = Vector2( 24, 1 )
+
+[node name="Solids" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Floor" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( -64, 16 )
+
+[node name="Floor3" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 48, 16 )
+
+[node name="Floor2" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 0, 160 )
+
+[node name="Floor4" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( -192, -64 )
+scale = Vector2( 24, 1 )
+
+[node name="Floor5" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( -192, -48 )
+scale = Vector2( 1, 30 )
+
+[node name="Floor6" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( 176, -48 )
+scale = Vector2( 1, 30 )
+
+[node name="Stars" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Star" parent="Stars" instance=ExtResource( 4 )]
+position = Vector2( 8, 144 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( -56, 0 )
+physics_material_override = SubResource( 1 )
+DeathNode = NodePath("../Death")
