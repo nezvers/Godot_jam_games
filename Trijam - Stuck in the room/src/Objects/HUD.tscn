@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Font/Font4.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/Objects/HUD.gd" type="Script" id=2]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 2
+custom_constants/margin_left = 2
+custom_constants/margin_bottom = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/MarginContainer"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 158.0
+margin_bottom = 7.0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 1 )
+text = "Score: "
+
+[node name="Label2" type="Label" parent="Control/MarginContainer"]
+visible = false
+margin_left = 32.0
+margin_top = 42.0
+margin_right = 128.0
+margin_bottom = 47.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 1 )
+text = "Press any key to restart"
+
+[node name="Label3" type="Label" parent="Control/MarginContainer"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 158.0
+margin_bottom = 7.0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 1 )
+text = "Bricks: "
+align = 2

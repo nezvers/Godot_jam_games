@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/Images/Tiles/Tiles.png" type="Texture" id=1]
+[ext_resource path="res://src/Objects/TetrisPiece.gd" type="Script" id=2]
+[ext_resource path="res://src/Objects/FadeIn.tres" type="Animation" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3.75, 4 )
+
+[node name="TetrisPiece" type="KinematicBody2D"]
+collision_layer = 2
+script = ExtResource( 2 )
+
+[node name="Block" type="CollisionShape2D" parent="."]
+position = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Block"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 8, 8 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Block"]
+position = Vector2( 0, 4 )
+cast_to = Vector2( 0, 300 )
+
+[node name="Block2" type="CollisionShape2D" parent="."]
+position = Vector2( -4, 4 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Block2"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 8, 8 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Block2"]
+position = Vector2( 0, 4 )
+cast_to = Vector2( 0, 300 )
+
+[node name="Block3" type="CollisionShape2D" parent="."]
+position = Vector2( 12, 4 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Block3"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 8, 8 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Block3"]
+position = Vector2( 0, 4 )
+cast_to = Vector2( 0, 300 )
+
+[node name="Block4" type="CollisionShape2D" parent="."]
+position = Vector2( 4, -4 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Block4"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 8, 8 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Block4"]
+position = Vector2( 0, 4 )
+cast_to = Vector2( 0, 300 )
+
+[node name="Node2D" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+autoplay = "FadeIn"
+anims/FadeIn = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="Node2D"]
+
+[node name="Timer" type="Timer" parent="Node2D"]
+one_shot = true
+[connection signal="animation_finished" from="Node2D/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="tween_all_completed" from="Node2D/Tween" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="timeout" from="Node2D/Timer" to="." method="_on_Timer_timeout"]

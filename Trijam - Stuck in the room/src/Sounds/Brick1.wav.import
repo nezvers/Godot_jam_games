@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Brick1.wav-75a1dca336acb68ab6e5ece72ebd7fda.sample"
+
+[deps]
+
+source_file="res://src/Sounds/Brick1.wav"
+dest_files=[ "res://.import/Brick1.wav-75a1dca336acb68ab6e5ece72ebd7fda.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
