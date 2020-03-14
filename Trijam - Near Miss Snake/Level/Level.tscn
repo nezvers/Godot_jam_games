@@ -1,0 +1,126 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Level/Level.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/WhiteTiles.png" type="Texture" id=2]
+[ext_resource path="res://Snake/Snake.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform vec4 color1: hint_color = vec4(1.0,0.0,0.0,1.0);
+uniform vec4 color2: hint_color = vec4(0.0,1.0,0.0,1.0);
+uniform vec4 color3: hint_color = vec4(0.0,0.0,1.0,1.0);
+
+vec4 colorize(vec4 col)
+{
+	// Color greater than (default) 0.50 in value
+	// Set bright color
+    if(col.r > 0.5)
+        return vec4(color3);
+    
+	// Color greater than (default) 0.75 in value
+    // Set dark color
+    if(col.r > 0.25)
+        return vec4(color2);
+	
+	// Color greater than 0 in value
+    // Set darkest color
+    return vec4(color1);
+}
+
+void fragment()
+{
+	vec4 pixel_color =  vec4(texture(TEXTURE, UV));
+	COLOR = colorize(pixel_color);
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+shader_param/color1 = Color( 1, 0, 0, 1 )
+shader_param/color2 = Color( 0, 1, 0, 1 )
+shader_param/color3 = Color( 0, 0, 1, 1 )
+
+[sub_resource type="TileSet" id=1]
+0/name = "Solid"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 1, 1 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Snake"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 1, 0, 1, 1 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Food"
+2/texture = ExtResource( 2 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 100, 100, 100, 1 )
+2/region = Rect2( 2, 0, 1, 1 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Bad"
+3/texture = ExtResource( 2 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 3, 0, 1, 1 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shapes = [  ]
+3/z_index = 0
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+margin_top = 10.0
+margin_right = 320.0
+margin_bottom = 190.0
+stretch = true
+stretch_shrink = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 20, 11 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="TileMap" type="TileMap" parent="ViewportContainer/Viewport"]
+material = SubResource( 3 )
+tile_set = SubResource( 1 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 10, 0, 0, 11, 0, 0, 196627, 0, 0, 262163, 0, 0, 327680, 0, 0, 393216, 0, 0, 589832, 0, 0, 589833, 0, 0, 589843, 0, 0 )
+
+[node name="Snake" parent="ViewportContainer/Viewport" instance=ExtResource( 3 )]
+position = Vector2( 6, 4 )
+
+[node name="Tween" type="Tween" parent="ViewportContainer/Viewport"]
+
+[node name="ColorRect" type="ColorRect" parent="ViewportContainer"]
+margin_top = -10.0
+margin_right = 320.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="ViewportContainer"]
+margin_top = 164.0
+margin_right = 320.0
+margin_bottom = 174.0
+color = Color( 0, 0, 0, 1 )
+[connection signal="tween_all_completed" from="ViewportContainer/Viewport/Tween" to="." method="Tween_completed"]
