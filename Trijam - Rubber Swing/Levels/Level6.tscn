@@ -10,7 +10,7 @@
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
-Next_Scene = "res://Levels/Level1.tscn"
+Next_Scene = "res://Levels/Level0.tscn"
 
 [node name="Death" parent="." instance=ExtResource( 2 )]
 position = Vector2( -192, 432 )

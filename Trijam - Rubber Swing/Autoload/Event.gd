@@ -3,6 +3,9 @@ extends Node
 signal restart
 signal changeLevel
 signal collect
+signal finished
+
+var level:int = 0;
 
 #Palletes generated at https://colorhunt.co/palettes/popular
 var pallete_list:Array = [
@@ -25,5 +28,16 @@ var pallete_list:Array = [
 	[Color("ff6464"), Color("ff8264"), Color("ffaa64"), Color("fff5a5")],
 	[Color("fffcca"), Color("55e9bc"), Color("11d3bc"), Color("537780")],
 	[Color("3a0088"), Color("930077"), Color("e61c5d"), Color("ffbd39")],
-	[Color("f8b595"), Color("f67280"), Color("c06c84"), Color("6c5b7c")]
+	[Color("f8b595"), Color("f67280"), Color("c06c84"), Color("6c5b7c")],
+	[Color("fe0000"), Color("fff53c"), Color("fff53c"), Color("fff53c")],
+	[Color("fe0000"), Color("fff53c"), Color("fff53c"), Color("fff53c")],
+	[Color("fe0000"), Color("fff53c"), Color("fff53c"), Color("fff53c")],
+	[Color("fe0000"), Color("fff53c"), Color("fff53c"), Color("fff53c")],
+	[Color("fe0000"), Color("fff53c"), Color("fff53c"), Color("fff53c")],
+	[Color("fe0000"), Color("fff53c"), Color("fff53c"), Color("fff53c")],
+	[Color("fe0000"), Color("fff53c"), Color("fff53c"), Color("fff53c")],
+	[Color("fe0000"), Color("fff53c"), Color("fff53c"), Color("fff53c")],
+	[Color("fe0000"), Color("fff53c"), Color("fff53c"), Color("fff53c")],
+	[Color("fe0000"), Color("fff53c"), Color("fff53c"), Color("fff53c")],
+	[Color("fe0000"), Color("fff53c"), Color("fff53c"), Color("fff53c")]
 	]

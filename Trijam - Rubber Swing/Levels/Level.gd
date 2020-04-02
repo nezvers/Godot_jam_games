@@ -7,6 +7,7 @@ onready var Solids = get_node("Solids")
 onready var Player = get_node("Player")
 onready var Stars = get_node("Stars")
 onready var Sound:AudioStreamPlayer = AudioStreamPlayer.new()
+var no_restart = false
 
 onready var stars:int = get_tree().get_nodes_in_group("Star").size()
 var speed:float = 0.5
@@ -39,10 +40,15 @@ func set_palette():
 func on_collect():
 	stars -= 1
 	if stars == 0:
-		Event.emit_signal("changeLevel")
+		no_restart = true
+		var nice:Node = load("res://Objects/Nice.tscn").instance()
+		add_child(nice)
 
 func on_restart()->void:
-	get_tree().reload_current_scene()
+	if !no_restart:
+		get_tree().reload_current_scene()
+
+
 
 func on_changeLevel():
 	get_tree().change_scene(Next_Scene)

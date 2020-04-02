@@ -10,7 +10,7 @@
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
-Next_Scene = "res://Levels/Level2.tscn"
+Next_Scene = "res://Levels/Level1.tscn"
 
 [node name="Death" parent="." instance=ExtResource( 2 )]
 position = Vector2( -192, 432 )
@@ -18,33 +18,45 @@ scale = Vector2( 24, 1 )
 
 [node name="Solids" type="Node2D" parent="."]
 
-[node name="Floor" parent="Solids" instance=ExtResource( 3 )]
-position = Vector2( -64, 16 )
-
-[node name="Floor3" parent="Solids" instance=ExtResource( 3 )]
-position = Vector2( 48, 16 )
-
-[node name="Floor2" parent="Solids" instance=ExtResource( 3 )]
-position = Vector2( 0, 160 )
-
 [node name="Floor4" parent="Solids" instance=ExtResource( 3 )]
-position = Vector2( -192, -64 )
-scale = Vector2( 24, 1 )
+position = Vector2( -378, -181 )
+scale = Vector2( 40, 1 )
+
+[node name="Floor7" parent="Solids" instance=ExtResource( 3 )]
+position = Vector2( -378, 168 )
+scale = Vector2( 40, 1 )
 
 [node name="Floor5" parent="Solids" instance=ExtResource( 3 )]
-position = Vector2( -192, -48 )
-scale = Vector2( 1, 30 )
+position = Vector2( -378, -166 )
+scale = Vector2( 1, 21.615 )
 
 [node name="Floor6" parent="Solids" instance=ExtResource( 3 )]
-position = Vector2( 176, -48 )
-scale = Vector2( 1, 30 )
+position = Vector2( 246, -181 )
+scale = Vector2( 1, 22.466 )
 
 [node name="Stars" type="Node2D" parent="."]
 
 [node name="Star" parent="Stars" instance=ExtResource( 4 )]
-position = Vector2( 8, 144 )
+position = Vector2( -298, -91 )
+rotation = -0.0698132
+
+[node name="Star2" parent="Stars" instance=ExtResource( 4 )]
+position = Vector2( -290, -21 )
+rotation = -0.0698132
+
+[node name="Star3" parent="Stars" instance=ExtResource( 4 )]
+position = Vector2( -252, -41 )
+rotation = -0.0698132
+
+[node name="Star4" parent="Stars" instance=ExtResource( 4 )]
+position = Vector2( -232, -75 )
+rotation = -0.0698132
+
+[node name="Star5" parent="Stars" instance=ExtResource( 4 )]
+position = Vector2( -224, -110 )
+rotation = -0.0698132
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( -56, 0 )
+position = Vector2( -165, -150 )
 physics_material_override = SubResource( 1 )
 DeathNode = NodePath("../Death")
