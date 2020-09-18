@@ -13,7 +13,6 @@ script = ExtResource( 1 )
 Next_Level = "res://Level1.tscn"
 
 [node name="Grounds" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 1025.06
 margin_bottom = 600.0
 script = ExtResource( 2 )
