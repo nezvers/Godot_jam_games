@@ -30,7 +30,13 @@ func _process(delta):
 
 func set_palette():
 	randomize()
-	var pallete_index:int = randi() % Event.pallete_list.size()
+	var pallete_index:int
+	if !Event.special:
+		pallete_index = randi() % Event.pallete_list.size()
+	else:
+		Event.special = false
+		pallete_index = Event.pallete_list.size() - 1
+		
 	var pallete:Array = Event.pallete_list[pallete_index]
 	VisualServer.set_default_clear_color(pallete[0])
 	Solids.modulate = pallete[1]
@@ -41,12 +47,10 @@ func on_collect():
 	stars -= 1
 	if stars == 0:
 		no_restart = true
-		var nice:Node = load("res://Objects/Nice.tscn").instance()
+		var nice:Node = PreLoad.Congrats.instance()
 		add_child(nice)
+		Event.emit_signal("finished")
 
-func on_restart()->void:
-	if !no_restart:
-		get_tree().reload_current_scene()
 
 
 

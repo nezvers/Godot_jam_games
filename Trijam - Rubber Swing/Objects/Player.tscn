@@ -1,32 +1,27 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Objects/Player.gd" type="Script" id=1]
 [ext_resource path="res://Tool/VisibleCollisionShape2D.gd" type="Script" id=2]
+[ext_resource path="res://Objects/KinematicPlayer.gd" type="Script" id=3]
 
-[sub_resource type="PhysicsMaterial" id=1]
-friction = 0.0
-bounce = 5.0
+[sub_resource type="CircleShape2D" id=1]
+radius = 8.0
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 8.0
 
-[sub_resource type="CircleShape2D" id=3]
-radius = 8.0
-
-[node name="Player" type="RigidBody2D" groups=[
+[node name="Player" type="KinematicBody2D" groups=[
 "Player",
 ]]
+position = Vector2( -25, 21 )
+z_index = -1
 collision_layer = 2
-collision_mask = 5
-mode = 2
-mass = 0.1
-physics_material_override = SubResource( 1 )
-gravity_scale = 2.5
-script = ExtResource( 1 )
-speed = 100.0
+script = ExtResource( 3 )
+gravity = Vector2( 0, 3 )
+bounciness = 0.318
+pull_impulse = 11.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 script = ExtResource( 2 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -37,14 +32,8 @@ cast_to = Vector2( 0, -50 )
 width = 1.0
 default_color = Color( 1, 1, 1, 1 )
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.17
-one_shot = true
-
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-drag_margin_h_enabled = false
-drag_margin_v_enabled = false
 smoothing_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -52,5 +41,4 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 3 )
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+shape = SubResource( 2 )

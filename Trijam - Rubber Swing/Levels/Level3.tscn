@@ -13,11 +13,10 @@ script = ExtResource( 1 )
 Next_Scene = "res://Levels/Level4.tscn"
 
 [node name="Death" parent="." instance=ExtResource( 2 )]
-position = Vector2( -192, 432 )
+position = Vector2( -192, 640.613 )
 scale = Vector2( 24, 1 )
 
 [node name="Solids" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Floor3" parent="Solids" instance=ExtResource( 3 )]
 position = Vector2( 154.186, 158.745 )
@@ -35,7 +34,6 @@ position = Vector2( 655.643, 157.392 )
 position = Vector2( 0, 160 )
 
 [node name="Stars" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Star2" parent="Stars" instance=ExtResource( 4 )]
 position = Vector2( 662.573, 143.7 )

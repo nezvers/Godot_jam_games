@@ -1,12 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Death.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Floor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Star.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=5]
-
-[sub_resource type="PhysicsMaterial" id=1]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
@@ -58,5 +56,4 @@ rotation = -0.0698132
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( -165, -150 )
-physics_material_override = SubResource( 1 )
 DeathNode = NodePath("../Death")

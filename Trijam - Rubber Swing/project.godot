@@ -9,24 +9,36 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "RigidBody2D",
+"base": "RigidKinematicBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://Objects/Player.gd"
+"path": "res://Objects/KinematicPlayer.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "RigidKinematicBody2D",
+"language": "GDScript",
+"path": "res://Objects/RigidKinematicBody2D.gd"
 }, {
 "base": "CollisionShape2D",
 "class": "VisibleCollisionShape2D",
 "language": "GDScript",
 "path": "res://Tool/VisibleCollisionShape2D.gd"
+}, {
+"base": "RigidBody2D",
+"class": "_Player",
+"language": "GDScript",
+"path": "res://Objects/Player.gd"
 } ]
 _global_script_class_icons={
 "Player": "",
-"VisibleCollisionShape2D": ""
+"RigidKinematicBody2D": "",
+"VisibleCollisionShape2D": "",
+"_Player": ""
 }
 
 [application]
 
-config/name="RigidSwing"
+config/name="Rubber Swing"
 run/main_scene="res://Levels/Level0.tscn"
 config/icon="res://icon.png"
 
