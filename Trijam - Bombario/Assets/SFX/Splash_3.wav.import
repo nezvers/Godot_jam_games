@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Splash_3.wav-d6c532e465bec275d77405235c4e4371.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Splash_3.wav"
+dest_files=[ "res://.import/Splash_3.wav-d6c532e465bec275d77405235c4e4371.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

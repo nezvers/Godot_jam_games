@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Characters/Player/Player-sheet.png" type="Texture" id=1]
+[ext_resource path="res://Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Objects/BombSpawner.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4, 7.5 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Walk"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5, 6 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "steps"
+}, {
+"args": [  ],
+"method": "steps"
+} ]
+}
+
+[node name="Player" type="KinematicBody2D"]
+collision_layer = 256
+script = ExtResource( 2 )
+jump_impulse = -230.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -7.5 )
+shape = SubResource( 1 )
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Body"]
+position = Vector2( 0, -8 )
+texture = ExtResource( 1 )
+hframes = 7
+frame = 5
+
+[node name="Position2D" type="Position2D" parent="Body"]
+position = Vector2( 9, -6 )
+
+[node name="BombSpawner" parent="Body/Position2D" instance=ExtResource( 3 )]
+
+[node name="Camera" type="Camera2D" parent="."]
+current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+anims/Idle = SubResource( 2 )
+anims/Walk = SubResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = "SFX"
+
+[node name="JumpBuffer" type="Timer" parent="."]
+wait_time = 0.17
+one_shot = true

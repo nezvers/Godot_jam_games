@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Steps_slower_02.wav-c1a65ada20ff1f2823a057d65190aa9d.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Steps_slower_02.wav"
+dest_files=[ "res://.import/Steps_slower_02.wav-c1a65ada20ff1f2823a057d65190aa9d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
