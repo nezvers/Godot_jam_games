@@ -13,6 +13,7 @@ var timer: = 0.0
 var max_time: = 2.0
 
 func _ready()->void:
+# warning-ignore:return_value_discarded
 	Event.connect("bomb_exploded", self, "bomb_exploded")
 
 func _unhandled_input(event)->void:

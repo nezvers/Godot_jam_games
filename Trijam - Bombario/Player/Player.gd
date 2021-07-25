@@ -26,6 +26,7 @@ func _unhandled_input(event)->void:
 		for b in bombs:
 			b.damage()
 	elif event.is_action_pressed("reset"):
+# warning-ignore:return_value_discarded
 		get_tree().reload_current_scene()
 	elif event.is_action_pressed("exit"):
 		get_tree().quit()
@@ -80,7 +81,9 @@ func state_check()->void:
 func damage()->void:
 	set_process(false)
 	set_physics_process(false)
+	find_node("BombSpawner").set_process_unhandled_input(false)
 	anim.play("Idle")
+	$CollisionShape2D.set_deferred("disabled", true)
 	visible = false
 	audio.volume_db = 0.0
 	audio.stream = PreLoad.snd_Die
@@ -88,6 +91,7 @@ func damage()->void:
 	yield(audio, "finished")
 	Event.emit_signal("reset")
 
+# warning-ignore:function_conflicts_variable
 func steps()->void:
 	
 	audio.stream = steps[randi() % 4]

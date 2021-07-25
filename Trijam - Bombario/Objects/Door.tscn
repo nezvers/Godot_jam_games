@@ -7,16 +7,16 @@
 extents = Vector2( 2, 5 )
 
 [node name="Door" type="Area2D"]
-monitoring = false
-monitorable = false
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -5 )
 shape = SubResource( 1 )
+disabled = true
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -8 )
 texture = ExtResource( 1 )
 hframes = 2
+
 [connection signal="body_entered" from="." to="." method="_on_Door_body_entered"]

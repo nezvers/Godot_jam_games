@@ -5,10 +5,12 @@ onready var anim:AnimationPlayer = $AnimationPlayer
 onready var audio:AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready()->void:
+# warning-ignore:return_value_discarded
 	connect("collided", self, "collided")
 	audio.stream = PreLoad.snd_BombBounce
 	if !Stats.remote_control:
 		anim.play("Pulse")
+# warning-ignore:return_value_discarded
 		timer.connect("timeout", self, "timeout")
 		timer.start()
 	else:
@@ -21,6 +23,7 @@ func timeout()->void:
 	explode()
 
 func damage()->void:
+# warning-ignore:return_value_discarded
 	anim.connect("animation_finished", self, "_on_AnimationPlayer_animation_finished")
 	anim.play("Remote")
 

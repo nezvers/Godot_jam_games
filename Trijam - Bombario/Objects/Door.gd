@@ -3,11 +3,11 @@ extends Area2D
 onready var sprite:Sprite = $Sprite
 
 func _ready()->void:
+# warning-ignore:return_value_discarded
 	Event.connect("level_cleared", self, "level_cleared")
 
 func level_cleared()->void:
-	monitorable = true
-	monitoring = true
+	$CollisionShape2D.set_deferred("disabled", false)
 	sprite.frame = 1
 
 
