@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/tanknsoldier/enemy/enemy 2/walk/enemy2walk1.png" type="Texture" id=1]
+[ext_resource path="res://Characters/Character.gd" type="Script" id=3]
+[ext_resource path="res://Characters/Gun.gd" type="Script" id=4]
+[ext_resource path="res://Bullets/Bullet.tscn" type="PackedScene" id=6]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 16.0
+
+[node name="Character" type="KinematicBody2D"]
+collision_layer = 4
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Body"]
+rotation = -1.5708
+texture = ExtResource( 1 )
+offset = Vector2( -0.4, 5 )
+
+[node name="Gun1" type="Position2D" parent="Body"]
+position = Vector2( 31, 0 )
+script = ExtResource( 4 )
+__meta__ = {
+"_gizmo_extents_": 0.0
+}
+bulletScene = ExtResource( 6 )
+
+[node name="Timer" type="Timer" parent="Body/Gun1"]
+wait_time = 0.3
+one_shot = true
+
+[node name="Gun2" type="Position2D" parent="Body"]
+position = Vector2( 31, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Audio/Assimilate.wav" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Audio/Shoot.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Audio/Death.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/Damage.wav" type="AudioStream" id=4]
+[ext_resource path="res://Autoload/Audio.gd" type="Script" id=5]
+
+[node name="Audio" type="Node"]
+script = ExtResource( 5 )
+
+[node name="Damage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -6.861
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="Assimilate" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
